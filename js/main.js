@@ -13,6 +13,8 @@ const yStep = yLabels[1] - yLabels[0]
 const xs = []
 const ys = []
 
+const isMobile = window.screen.orientation.type === "portrait-primary" | "portrait-secondary"
+
 for (let x = xLabels[0] - xStep; x < xLabels[xLabels.length - 1] + xStep; x++) {
     xs.push(x)
     ys.push(7.91 * x + 108.6)
@@ -45,20 +47,21 @@ new Chart(ctx, {
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
-          legend: {
-              labels: {
-                  font: {
-                      size: 16
-                  }
-              }
-          }
+            legend: {
+                align: isMobile ? "end" : "center",
+                labels: {
+                    font: {
+                        size: isMobile ? 10 : 16
+                    },
+                }
+            }
         },
         layout: {
             padding: {
-                right: 85,
-                left: 35,
-                bottom: 25,
-                top: 45,
+                right: isMobile ? 80 : 85,
+                left: isMobile ? 20 : 35,
+                bottom: isMobile ? 20 : 25,
+                top: isMobile ? 20 : 45,
             },
         },
         scales: {
