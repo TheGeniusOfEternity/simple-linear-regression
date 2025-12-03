@@ -27,23 +27,25 @@ new Chart(ctx, {
             {
                 label: 'Наблюдения',
                 data: points,
-                backgroundColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: '#00b4d8',
             },
             {
                 label: 'Линия регрессии',
                 type: 'line',
                 data: ys,
-                borderColor: 'rgba(255, 99, 132, 1)',
+                borderColor: '#ff4d6d',
                 borderWidth: 2,
                 pointRadius: 0,
             },
         ],
     },
     options: {
+        responsive: true,
+        maintainAspectRatio: false,
         layout: {
             padding: {
-                right: 55,  // место для стрелки и подписи X
-                left: 15,   // место для стрелки Y
+                right: 55,
+                left: 15,
                 bottom: 25,
                 top: 25,
             },
